@@ -89,21 +89,26 @@ public class LoginFragment extends Fragment {
 			prefs.getApi().loginUser(em, pwd).enqueue(new Callback<User>() {
 				@Override
 				public void onResponse(Call<User> call, Response<User> response) {
-					if (response != null && response.isSuccessful()) {
-						//Returns user as a json object
-						User user = response.body();
-						//Set user login state to be true
-						prefs.setAccessToken(String.valueOf(user.id));
-						
-						//Store user data locally
-						prefs.setLoggedInUser(user);
-						
-						//Dismiss loading dialog
-						loading.dismiss();
-						
-						//Send user to home screen
-						activity.startActivity(new Intent(activity, HomeActivity.class));
-						activity.finish();
+
+					if (response != null) {
+						if ( response.isSuccessful()) {
+							//Returns user as a json object
+							User user = response.body();
+							//Set user login state to be true
+							prefs.setAccessToken(String.valueOf(user.id));
+
+							//Store user data locally
+							prefs.setLoggedInUser(user);
+
+							//Dismiss loading dialog
+							loading.dismiss();
+
+							//Send user to home screen
+							activity.startActivity(new Intent(activity, HomeActivity.class));
+							activity.finish();
+						}else {
+							showMessage("Unable to retrieve: " + em);
+						}
 					} else {
 						showMessage(response.message());
 					}

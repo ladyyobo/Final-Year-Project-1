@@ -39,7 +39,8 @@
 		</activity-alias>
 		
 		<activity android:name=".ui.AuthActivity" />
-		<activity android:name=".ui.ScanImageActivity" />
+		<activity android:name=".ui.ProductInfoActivity"
+			android:exported="true"/>
 		<activity android:name=".ui.ProfileActivity" />
 		<activity android:name=".ui.AboutActivity" />
 		<activity android:name=".ui.SearchActivity"></activity>

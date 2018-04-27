@@ -37,7 +37,7 @@ public class Utils {
 				return false;
 			}
 		}
-		return !s.isEmpty() && s.length() > 6;
+		return !s.isEmpty() && s.length() > 3;
 	}
 	
 	//Logs and/or toasts a message
@@ -60,7 +60,7 @@ public class Utils {
 	
 	//Server url
 //	static final String SERVER_IP = "http://10.0.2.2/serwaa/shopping_guide1/api/";
-	static final String SERVER_IP = "http://10.0.2.2:8080/serwaa/shopping_guide1/";
+	static final String SERVER_IP = "http://192.168.43.246/shopping_guide1/main/api/";
 	
 	//Database tables
 	public static final String USERS = "users";

@@ -34,7 +34,7 @@ public class HealthePrefs {
 	private static volatile HealthePrefs singleton;
 	
 	//User fields to be stored
-	private long id;
+	private String id;
 	@Nullable
 	private String accessToken;
 	@Nullable
@@ -72,7 +72,7 @@ public class HealthePrefs {
 		accessToken = prefs.getString(KEY_ACCESS_TOKEN, null);
 		isLoggedIn = accessToken != null && !TextUtils.isEmpty(accessToken);
 		if (isLoggedIn) {
-			id = prefs.getLong(KEY_USER_ID, 0L);
+			id = prefs.getString(KEY_USER_ID, null);
 			username = prefs.getString(KEY_USERNAME, null);
 			email = prefs.getString(KEY_EMAIL, null);
 			weight = prefs.getString(KEY_WEIGHT, null);
@@ -113,7 +113,7 @@ public class HealthePrefs {
 			height = user.height;
 			dob = user.dob;
 			SharedPreferences.Editor editor = prefs.edit();
-			editor.putLong(KEY_USER_ID, id);
+			editor.putString(KEY_USER_ID, id);
 			editor.putString(KEY_USERNAME, username);
 			editor.putString(KEY_EMAIL, email);
 			editor.putString(KEY_DOB, dob);
@@ -126,14 +126,14 @@ public class HealthePrefs {
 	public void logout() {
 		isLoggedIn = false;
 		accessToken = null;
-		id = 0L;
+		id = null;
 		username = null;
 		email = null;
 		dob = null;
 		height = null;
 		weight = null;
 		SharedPreferences.Editor editor = prefs.edit();
-		editor.putLong(KEY_USER_ID, id);
+		editor.putString(KEY_USER_ID, id);
 		editor.putString(KEY_USERNAME, username);
 		editor.putString(KEY_EMAIL, email);
 		editor.putString(KEY_DOB, dob);
@@ -143,11 +143,11 @@ public class HealthePrefs {
 		createApi();
 	}
 	
-	private boolean isLoggedIn() {
+	public boolean isLoggedIn() {
 		return isLoggedIn;
 	}
 	
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 	

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.healthe.R;
+import io.healthe.util.HealthePrefs;
 
 public class SplashActivity extends AppCompatActivity {
 	@BindView(R.id.splash_app_name)
@@ -35,7 +36,12 @@ public class SplashActivity extends AppCompatActivity {
 		TransitionManager.beginDelayedTransition(container);
 		appDesc.setVisibility(View.VISIBLE);
 		new Handler().postDelayed(() -> {
-			startActivity(new Intent(SplashActivity.this, AuthActivity.class));
+			HealthePrefs healthePrefs = HealthePrefs.get(this);
+			if (healthePrefs.isLoggedIn()){
+				startActivity(new Intent(SplashActivity.this, HomeActivity.class));
+			}else {
+				startActivity(new Intent(SplashActivity.this, AuthActivity.class));
+			}
 			finish();
 		}, 1500);
 	}

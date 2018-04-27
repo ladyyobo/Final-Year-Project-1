@@ -111,7 +111,7 @@ public class RegisterFragment extends Fragment implements DatePickerDialog.OnDat
 						public void onResponse(Call<User> call, Response<User> response) {
 							if (response != null && response.isSuccessful()) {
 								User user = response.body();
-								prefs.setAccessToken(String.valueOf(user.id));
+								prefs.setAccessToken(user.id);
 								prefs.setLoggedInUser(user);
 								activity.startActivity(new Intent(activity, HomeActivity.class));
 								activity.finish();

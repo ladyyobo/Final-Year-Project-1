@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\Serwaa\Desktop\healthe-mobile-master\app\app.iml" filepath="C:\Users\Serwaa\Desktop\healthe-mobile-master\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://C:\Users\Serwaa\Desktop\healthe-mobile-master\healthe-mobile.iml" filepath="C:\Users\Serwaa\Desktop\healthe-mobile-master\healthe-mobile.iml" />
       <module fileurl="file://$PROJECT_DIR$/healthe-mobile-master.iml" filepath="$PROJECT_DIR$/healthe-mobile-master.iml" />
     </modules>

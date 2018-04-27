@@ -1,5 +1,8 @@
 package io.healthe.util;
 
+import org.json.JSONObject;
+
+import io.healthe.model.ImageResponse;
 import io.healthe.model.User;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -12,12 +15,12 @@ import retrofit2.http.POST;
 public interface HealtheService {
 	
 	@FormUrlEncoded
-	@POST("api/login_user.php")
+	@POST("login_user.php")
 	Call<User> loginUser(@Field("email") String email, @Field("password") String password);
 	
 	//Creates new user
 	@FormUrlEncoded
-	@POST("api/create_user.php")
+	@POST("create_user.php")
 	Call<User> createUser(
 			@Field("name") String name,
 			@Field("dob") String dob,
@@ -25,5 +28,13 @@ public interface HealtheService {
 			@Field("height") String height,
 			@Field("email") String email,
 			@Field("user_password") String password
+	);
+
+	//Get product details from the database
+	@FormUrlEncoded
+	@POST("get_product_details.php")
+	Call<ImageResponse> getProductDetails(
+			@Field("user_id") String userID,
+			@Field("product_id") String productID
 	);
 }
