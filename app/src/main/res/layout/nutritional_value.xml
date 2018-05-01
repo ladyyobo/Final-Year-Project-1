@@ -8,6 +8,7 @@
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:layout_weight="1"
+        android:textColor="#807f7f"
         android:id="@+id/tv_nutrient"
         android:text="Nutrient"/>
 
@@ -15,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_width="0dp"
         android:layout_weight="1"
+        android:textColor="#807f7f"
         android:id="@+id/tv_percentage"
         android:text="Percentage"/>
 

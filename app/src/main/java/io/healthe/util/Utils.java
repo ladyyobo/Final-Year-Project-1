@@ -60,7 +60,10 @@ public class Utils {
 	
 	//Server url
 //	static final String SERVER_IP = "http://10.0.2.2/serwaa/shopping_guide1/api/";
-	static final String SERVER_IP = "http://192.168.43.246/shopping_guide1/main/api/";
+	static final String BASE_IP = "http://192.168.43.246";
+	static final String SERVER_IP =BASE_IP+ "/shopping_guide1/main/api/";
+	public static final String IMAGE_BASE = BASE_IP+"/shopping_guide1/images/";
+
 	
 	//Database tables
 	public static final String USERS = "users";

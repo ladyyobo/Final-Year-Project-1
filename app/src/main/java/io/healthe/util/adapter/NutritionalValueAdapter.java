@@ -13,7 +13,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.healthe.R;
-import io.healthe.model.NutritionValues;
+import io.healthe.model.NutritionalValue;
 
 /**
  * Created by Serwaa on 19-Feb-18.
@@ -22,7 +22,7 @@ import io.healthe.model.NutritionValues;
 
 public class NutritionalValueAdapter extends RecyclerView.Adapter<NutritionalValueAdapter.NutritionViewHolder> {
     private Context context;
-    private List<NutritionValues> nutritionalValues;
+    private List<NutritionalValue> nutritionalValues;
 
     public NutritionalValueAdapter(Context context) {
         this.context = context;
@@ -36,9 +36,9 @@ public class NutritionalValueAdapter extends RecyclerView.Adapter<NutritionalVal
 
     @Override
     public void onBindViewHolder(NutritionViewHolder holder, int position) {
-        NutritionValues nutritionalValue = nutritionalValues.get(position);
+        NutritionalValue nutritionalValue = nutritionalValues.get(position);
         holder.tv_percentage.setText(nutritionalValue.getPercentage());
-        holder.tv_nutrient.setText(nutritionalValue.getNutrients());
+        holder.tv_nutrient.setText(nutritionalValue.getNutrient());
     }
 
     @Override
@@ -46,9 +46,9 @@ public class NutritionalValueAdapter extends RecyclerView.Adapter<NutritionalVal
         return nutritionalValues.size();
     }
 
-    public void addNewContent(List<NutritionValues> newContent) {
+    public void addNewContent(List<NutritionalValue> newContent) {
         if (newContent.isEmpty()) return;
-        for (NutritionValues val : newContent) {
+        for (NutritionalValue val : newContent) {
             nutritionalValues.add(val);
             notifyItemRangeChanged(0, newContent.size());
         }

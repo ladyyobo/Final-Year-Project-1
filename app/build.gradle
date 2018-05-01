@@ -89,7 +89,10 @@ dependencies {
     //ButterKnife
     implementation "com.jakewharton:butterknife:${versions.butterknife}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${versions.butterknife}"
-
+    dependencies {
+        implementation 'com.github.bumptech.glide:glide:4.7.1'
+        annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    }
     //misc
     implementation 'org.jsoup:jsoup:1.10.3'
     implementation "com.afollestad.material-dialogs:core:${versions.material_dialogs}"

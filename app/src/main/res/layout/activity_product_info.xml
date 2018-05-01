@@ -18,8 +18,46 @@
             android:layout_width="match_parent"
             android:layout_height="230dp"
             android:contentDescription="@null"
-            android:scaleType="centerCrop"
-            android:src="@color/content_placeholder" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/noimage" />
+
+        <TextView
+            android:id="@+id/not_recommended_text"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:text="This product is not recommended for you"
+            android:textColor="#807f7f"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Recommendations"
+            android:textColor="#807f7f"
+            android:textSize="16sp" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lv_recommendations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="horizontal" />
+
+        <TextView
+            android:id="@+id/recommended_text"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="This product is recommended for you"
+            android:textColor="#807f7f"
+            android:textSize="16sp" />
+        <!--android:visibility="gone"-->
 
         <TextView
             android:id="@+id/tv_prod_details"
@@ -103,21 +141,6 @@
             android:scrollbarStyle="outsideOverlay"
             android:scrollbars="vertical" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:text="Recommendations"
-            android:textColor="#807f7f"
-            android:textSize="16sp" />
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/lv_recommendations"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:scrollbarStyle="outsideOverlay"
-            android:scrollbars="horizontal" />
 
     </LinearLayout>
 

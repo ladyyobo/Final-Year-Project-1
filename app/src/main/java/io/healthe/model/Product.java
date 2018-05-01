@@ -1,9 +1,12 @@
 package io.healthe.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Product data model
  */
-public class Product {
+public class Product implements Parcelable {
     private String id;
     private String name;
     private String cat_id;
@@ -17,6 +20,40 @@ public class Product {
         this.manufacturer = manufacturer;
         this.image = image;
     }
+
+    protected Product(Parcel in) {
+        id = in.readString();
+        name = in.readString();
+        cat_id = in.readString();
+        manufacturer = in.readString();
+        image = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(name);
+        dest.writeString(cat_id);
+        dest.writeString(manufacturer);
+        dest.writeString(image);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Product> CREATOR = new Creator<Product>() {
+        @Override
+        public Product createFromParcel(Parcel in) {
+            return new Product(in);
+        }
+
+        @Override
+        public Product[] newArray(int size) {
+            return new Product[size];
+        }
+    };
 
     public String getId() {
         return id;

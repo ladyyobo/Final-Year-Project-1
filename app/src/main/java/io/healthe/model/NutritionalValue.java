@@ -4,24 +4,24 @@ package io.healthe.model;
  * Models a nutritionValue data source
  */
 
-public class NutritionValues {
-    private String nutrients;
+public class NutritionalValue {
+    private String nutrient;
     private String percentage;
 
-    public NutritionValues() {
+    public NutritionalValue() {
     }
 
-    public NutritionValues(String nutrients, String percentage) {
-        this.nutrients = nutrients;
+    public NutritionalValue(String nutrient, String percentage) {
+        this.nutrient = nutrient;
         this.percentage = percentage;
     }
 
-    public String getNutrients() {
-        return nutrients;
+    public String getNutrient() {
+        return nutrient;
     }
 
-    public void setNutrients(String nutrients) {
-        this.nutrients = nutrients;
+    public void setNutrient(String nutrient) {
+        this.nutrient = nutrient;
     }
 
     public String getPercentage() {

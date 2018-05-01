@@ -8,10 +8,11 @@ import java.util.List;
 
 public class ImageResponse {
     private Product product;
-    private List<NutritionValues> values;
+    private List<NutritionalValue> values;
     private List<Product> recommendations;
 
-    public ImageResponse(Product product, List<NutritionValues> values, List<Product> recommendations) {
+
+    public ImageResponse(Product product, List<NutritionalValue> values, List<Product> recommendations) {
         this.product = product;
         this.values = values;
         this.recommendations = recommendations;
@@ -25,11 +26,11 @@ public class ImageResponse {
         this.product = product;
     }
 
-    public List<NutritionValues> getValues() {
+    public List<NutritionalValue> getValues() {
         return values;
     }
 
-    public void setValues(List<NutritionValues> values) {
+    public void setValues(List<NutritionalValue> values) {
         this.values = values;
     }
 
